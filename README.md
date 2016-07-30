@@ -14,7 +14,10 @@
 
 * 安装`node.js`
     
-    * 先装`node.js`的版本管理工具`nvm - node version manager`: `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash`.
+    * 先装`node.js`的版本管理工具`nvm - node version manager`:
+        
+            curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash
+    
     * 然后利用`nvm`安装`node.js`: `nvm install v4.2.4`.
     * 运行`node -v`, 输出`v4.2.4`即说明安装成功.
 
