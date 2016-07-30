@@ -10,11 +10,11 @@
 
 #### 第1节 后端`koa.js`
 
-后端我选择的是`koa.js`. 我选择`koa.js`的原因是它比较轻量, 并且使用了`generator`模式, 使得其开发避免了繁琐的回调嵌套. 为了运行`koa.js`, 需要先装一个`js`的运行环境`node.js`.
+后端我选择的是[`koa.js`](http://koajs.com/). 我选择`koa.js`的原因是它比较轻量, 并且使用了[`generator`](https://en.wikipedia.org/wiki/Generator_(computer_programming))模式, 使得其开发避免了繁琐的回调嵌套. 为了运行`koa.js`, 需要先装一个`js`的运行环境[`node.js`](https://nodejs.org/).
 
 * 安装`node.js`
     
-    * 先装`node.js`的版本管理工具`nvm - node version manager`:
+    * 先装`node.js`的版本管理工具[`nvm`](https://github.com/creationix/nvm):
         
             curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash
     
