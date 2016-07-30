@@ -12,9 +12,9 @@
 
 后端我选择的是`koa.js`. 我选择`koa.js`的原因是它比较轻量, 并且使用了`generator`模式, 使得其开发避免了繁琐的回调嵌套. 为了运行`koa.js`, 需要先装一个`js`的运行环境`node.js`.
 
-* `node.js`的安装
+* 安装`node.js`
     
-    * 先装`node.js`的版本管理工具`nvm - node version manager`: ``.
+    * 先装`node.js`的版本管理工具`nvm - node version manager`: `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash`.
     * 然后利用`nvm`安装`node.js`: `nvm install v4.2.4`.
     * 运行`node -v`, 输出`v4.2.4`即说明安装成功.
 
@@ -25,7 +25,7 @@
     * 使用`npm init`初始化一个`node.js`工程, 那些选项看着填就好啦.
     * 新建一个文件`index.js`, 这个文件就是你工程的入口文件啦.
 
-* 安装`koa.js`并用它启动一个Web服务.
+* 安装`koa.js`并用它启动一个Web服务
 
     * 安装`koa.js`: `npm install koa --save`.
     * 编辑`index.js`.
