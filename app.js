@@ -1,19 +1,23 @@
 var koa = require('koa');
+var webpack = require('webpack');
+var webpackDevMiddleware = require('koa-webpack-dev-middleware');
+var webpackHotMiddleware = require('koa-webpack-hot-middleware');
+var config = require('./webpack.config');
+var serve = require('koa-static');
+
 var app = koa();
 
-// logger
+// webpack compiler
 
-app.use(function *(next){
-  var start = new Date;
-  yield next;
-  var ms = new Date - start;
-  console.log('%s %s - %s', this.method, this.url, ms);
-});
+var compiler = webpack(config);
+app.use(webpackDevMiddleware(compiler, {
+  noInfo: true,
+  publicPath: config.output.publicPath
+}));
+app.use(webpackHotMiddleware(compiler));
 
 // response
 
-app.use(function *(){
-  this.body = 'Hello World';
-});
+app.use(serve('.'));
 
 app.listen(3000);

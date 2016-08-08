@@ -25,8 +25,13 @@
 
     * 新建一个文件夹来存你的工程: `mkdir blog`.
     * 进入到这个文件夹: `cd blog`.
-    * 使用`npm init`初始化一个`node.js`工程, 那些选项看着填就好啦.
-    * 新建一个文件`index.js`, 这个文件就是你工程的入口文件啦.
+    * 使用`npm init`初始化一个`node.js`工程, 把入口文件设为`app.js`, 剩下那些选项看着填就好啦.
+    * 看看生成了什么:
+        
+        * `LICENSE` - 这表示你新建的这个工程是在什么许可证下发布的.
+        * `README.md` - 这是你工程的简介.
+        * `package.json` - 这是最重要的一个文件, 你之前填的配置几乎都存在了这个文件里, 它就是你工程的配置文件.
+    * 新建一个文件`app.js`, 这个文件就是你工程的入口文件啦.
 
 * 安装`koa.js`并用它启动一个Web服务
 
@@ -51,9 +56,41 @@
 
             app.listen(3000);
 
-    * 运行上述代码, 启动Web服务: `node index.js`.
+    * 运行上述代码, 启动Web服务: `node app.js`.
     * 打开浏览器, 在地址栏中输入`127.0.0.1:3000`, 看看你的成果啦!
+    * 打开`package.json`, 在`"scripts"`加入一项`"start": "node app.js"`, 下次键入`npm start`就可以启动服务器啦.
 
 #### 第2节 前端`vue.js`
 
+* 安装`vue.js`
+    
+        npm install vue --save
 
+* 安装`babel-runtime`
+    
+        npm install babel-runtime --save
+
+* 安装和`koa`相关的热加载包
+        
+        npm install koa-static koa-webpack-dev-middleware koa-webpack-hot-middleware --save
+    
+* 安装`webpack`
+    
+        npm install webpack -g
+        npm install webpack --save-dev
+
+* 安装`babel`相关包
+    
+        npm install babel-core babel-loader babel-plugin-transform-runtime babel-preset-es2015 babel-preset-stage-2 --save-dev
+    
+* 安装`cross-env`
+        
+        npm install cross-env --save-dev
+    
+* 安装相关`loader`
+    
+        npm install css-loader file-loader json-loader url-loader --save-dev
+
+* 安装`vue`相关`loader`
+    
+        npm install vue-hot-reload-api vue-html-loader vue-loader vue-style-loader --save-dev
