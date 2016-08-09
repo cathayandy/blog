@@ -15,7 +15,7 @@ import * as actions from '../actions.js';
 export default {
   data () {
     return {
-      id: '',
+      _id: '',
     };
   },
   methods: {
@@ -25,10 +25,11 @@ export default {
     actions,
   },
   route: {
-    data({ next, to: { params: { id } } }) {
-      this.currentIdU(id);
+    data({ next, to: { params: { _id } } }) {
+      this.blogR({ _id });
+      this.currentIdU(_id)
       next({
-        id: id,
+        _id,
       });
     },
   },

@@ -6,6 +6,7 @@ import BlogList from './components/blog-list.vue';
 import Blog from './components/blog.vue';
 
 Vue.use(VueRouter);
+
 const router = new VueRouter();
 router.map({
   '/': {
@@ -16,7 +17,7 @@ router.map({
     component: BlogList,
     name: 'blog-list'
   },
-  '/blog/:id': {
+  '/blog/:_id': {
     component: Blog,
     name: 'blog'
   },

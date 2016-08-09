@@ -13,7 +13,8 @@
       </div>
     </div>
     <div>
-      <div class="docs-section" v-for="i in getBlogs" v-link="{ name: 'blog', params: { id: i.id } }">
+      <div class="docs-section" v-for="i in getBlogs" track-by="_id" v-link="{ name: 'blog', params: { _id: i._id } }">
+        <i class="right fa fa-trash" @click.stop="deleteArticle(i)" aria-hidden="true"></i>
         <h6 class="docs-header">{{ i.title }}</h6>
         <p>{{ i.content }}</p>
       </div>
@@ -24,8 +25,6 @@
 <script>
 import * as getters from '../getters.js';
 import * as actions from '../actions.js';
-
-let i = 10;
 
 export default {
   data () {
@@ -46,15 +45,23 @@ export default {
       const blog = {
         title: this.title,
         content: this.content,
-        id: i.toString(),
       };
-      i += 1;
       this.blogC(blog);
     },
+    deleteArticle(blog) {
+      this.blogD(blog);
+    }
   },
   vuex: {
     getters,
     actions,
+  },
+  route: {
+    data(transition) {
+      this.currentIdU(-1);
+      this.blogListR();
+      transition.next();
+    },
   },
 };
 </script>
@@ -76,5 +83,8 @@ textarea {
   text-transform: uppercase;
   letter-spacing: .2rem;
   font-weight: 600;
+}
+.right {
+  float: right;
 }
 </style>
