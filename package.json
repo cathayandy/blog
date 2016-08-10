@@ -27,9 +27,12 @@
     "koa-static": "^2.0.0",
     "koa-webpack-dev-middleware": "^1.2.1",
     "koa-webpack-hot-middleware": "^1.0.3",
+    "marked": "^0.3.6",
     "mongodb": "^2.2.5",
     "skeleton-css": "^2.0.4",
     "vue": "^1.0.26",
+    "vue-animate": "0.0.4",
+    "vue-animated-list": "^1.0.2",
     "vue-resource": "^0.9.3",
     "vue-router": "^0.7.13",
     "vuex": "^1.0.0-rc.2"

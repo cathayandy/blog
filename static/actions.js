@@ -32,7 +32,7 @@ export const blogD = ({ dispatch }, blog) => {
   });
 };
 export const titleU = ({ dispatch }, _id, title) => {
-  Vue.http.patch(`/blogs/${blog._id}`, { title }).then(({ data }) => {
+  Vue.http.patch(`/blogs/${_id}`, { title }).then(({ data }) => {
     if (data.err) {
       console.log(data.err);
       return;
@@ -41,7 +41,7 @@ export const titleU = ({ dispatch }, _id, title) => {
   });
 };
 export const contentU = ({ dispatch }, _id, content) => {
-  Vue.http.patch(`/blogs/${blog._id}`, { content }).then(({ data }) => {
+  Vue.http.patch(`/blogs/${_id}`, { content }).then(({ data }) => {
     if (data.err) {
       console.log(data.err);
       return;

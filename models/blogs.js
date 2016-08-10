@@ -1,5 +1,6 @@
 const parse = require('co-body');
 const MongoClient = require('mongodb').MongoClient;
+const ObjectID = require('mongodb').ObjectID;
 var blogs;
 
 function* db(next) {
@@ -9,18 +10,9 @@ function* db(next) {
   db.close();
 }
 
-function* genId() {
-  var id = 0;
-  while (true) {
-    yield id;
-    id += 1;
-  }
-}
-const idGen = genId();
-
 function* C() {
   const blog = yield parse(this);
-  blog._id = idGen.next().value.toString();
+  blog._id = new ObjectID().toHexString();
   blog.create_at = new Date;
   yield blogs.insert(blog);
   console.log(`Create ${JSON.stringify(blog)}.`);
